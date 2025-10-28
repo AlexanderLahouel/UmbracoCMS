@@ -1,5 +1,19 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
 @{
-	Layout = null;
+
+	Layout = "mainLayout.cshtml";
+
 }
+@Html.GetBlockListHtml(Model.Sections)
+
+
+
+
+
+
+
+
+
+
+
