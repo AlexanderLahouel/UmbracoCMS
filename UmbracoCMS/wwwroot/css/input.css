@@ -1,5 +1,6 @@
 ﻿@import "tailwindcss";
 @import "./forms.css";
+@import "./swiper.css";
 
 
 @theme {
@@ -24,6 +25,7 @@
     --text-rte-md: 1.25rem;
     --text-rte-sm: 1rem;
     --text-rte-xs: 0.875rem;
+    --breakpoint-3xl: 150rem;
 }
 
 .rte h3 {
