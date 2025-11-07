@@ -21,12 +21,16 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 		<link href="~/css/output.css" rel="stylesheet" />
 	</head>
-	<body>
+<body class="min-h-screen flex flex-col">
 		<partial name="Partials/Layout/_Topbar"/>
 		<partial name="Partials/Layout/_Header" />
 
-		@RenderBody()
 
+		<main class="flex-grow">
+			@RenderBody()
+		</main>
+
+		<partial name="Partials/Layout/_Footer" />
 		<script src="~/js/form.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 		<script src="~/js/swiper.js"></script>

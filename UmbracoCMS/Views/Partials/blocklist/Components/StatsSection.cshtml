@@ -1,0 +1,54 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.StatsSection)Model.Content;
+    var bgImage = content.StatsBgImage;
+    var items = content.StatsItem;
+}
+
+<section class="relative text-center py-16 pb-0 overflow-visible isolate">
+    <div class="absolute inset-0 bg-[linear-gradient(to_bottom,_#45514C_80%,_#FFFFFF_80%)] -z-10"></div>
+
+
+    @if (bgImage != null)
+    {
+        <img src="@bgImage.Url()"
+             alt="Background dotted map"
+             class="absolute top-[5%] left-1/2 -translate-x-1/2 w-[80%] max-w-6xl object-contain opacity-25 pointer-events-none" />
+    }
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <p class="text-[0.875rem] text-secondary font-bold leading-none">@content.StatsLabel</p>
+        <h2 class="text-[2.5rem] text-neutral font-bold leading-none">@content.StatsTitle</h2>
+
+        <div class="grid grid-cols-3 gap-12 mt-12 text-center max-w-6xl mx-auto text-white">
+            @foreach (var item in content.StatsItem)
+            {
+                var statsItem = item.Content;
+                <div>
+                    <p class="text-[4.5rem] font-bold text-secondary mb-2 leading-none">
+                        @statsItem.Value("statsNumber")
+                    </p>
+                    <p class="text-neutral text-[1rem] max-w-xs mx-auto">
+                        @statsItem.Value("statsDescription")
+                    </p>
+                </div>
+            }
+        </div>
+
+        @if (content.StatsImage != null)
+        {
+            <div class="mt-20 flex justify-center relative z-20">
+                <img src="@content.StatsImage.Url()"
+                     alt=""
+                     class="w-full max-w-6xl rounded-lg shadow-xl" />
+            </div>
+        }
+    </div>
+</section>
+
+
+
+
+
+
