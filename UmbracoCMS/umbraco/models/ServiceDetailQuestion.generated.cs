@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Info Card</summary>
-	[PublishedModel("infoCard")]
-	public partial class InfoCard : PublishedElementModel
+	/// <summary>Service Detail Question</summary>
+	[PublishedModel("serviceDetailQuestion")]
+	public partial class ServiceDetailQuestion : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		public new const string ModelTypeAlias = "infoCard";
+		public new const string ModelTypeAlias = "serviceDetailQuestion";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<InfoCard, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<ServiceDetailQuestion, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public InfoCard(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public ServiceDetailQuestion(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,43 +50,27 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// info Background Color
+		/// Question Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoBackgroundColor")]
-		public virtual string InfoBackgroundColor => this.Value<string>(_publishedValueFallback, "infoBackgroundColor");
+		[ImplementPropertyType("questionBackgroundColor")]
+		public virtual string QuestionBackgroundColor => this.Value<string>(_publishedValueFallback, "questionBackgroundColor");
 
 		///<summary>
-		/// info Email Label
+		/// Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoEmailLabel")]
-		public virtual string InfoEmailLabel => this.Value<string>(_publishedValueFallback, "infoEmailLabel");
-
-		///<summary>
-		/// Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoImage");
-
-		///<summary>
-		/// Text
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoText")]
-		public virtual string InfoText => this.Value<string>(_publishedValueFallback, "infoText");
+		[ImplementPropertyType("questionSectionDescription")]
+		public virtual string QuestionSectionDescription => this.Value<string>(_publishedValueFallback, "questionSectionDescription");
 
 		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoTitle")]
-		public virtual string InfoTitle => this.Value<string>(_publishedValueFallback, "infoTitle");
+		[ImplementPropertyType("questionSectionTitle")]
+		public virtual string QuestionSectionTitle => this.Value<string>(_publishedValueFallback, "questionSectionTitle");
 	}
 }

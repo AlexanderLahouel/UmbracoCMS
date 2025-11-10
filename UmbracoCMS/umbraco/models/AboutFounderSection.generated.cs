@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Info Card</summary>
-	[PublishedModel("infoCard")]
-	public partial class InfoCard : PublishedElementModel
+	/// <summary>About Founder Section</summary>
+	[PublishedModel("aboutFounderSection")]
+	public partial class AboutFounderSection : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		public new const string ModelTypeAlias = "infoCard";
+		public new const string ModelTypeAlias = "aboutFounderSection";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<InfoCard, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<AboutFounderSection, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public InfoCard(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public AboutFounderSection(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,43 +50,35 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// info Background Color
+		/// Founder Body
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoBackgroundColor")]
-		public virtual string InfoBackgroundColor => this.Value<string>(_publishedValueFallback, "infoBackgroundColor");
+		[ImplementPropertyType("founderBody")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString FounderBody => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "founderBody");
 
 		///<summary>
-		/// info Email Label
+		/// Founder Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoEmailLabel")]
-		public virtual string InfoEmailLabel => this.Value<string>(_publishedValueFallback, "infoEmailLabel");
+		[ImplementPropertyType("founderImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops FounderImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "founderImage");
 
 		///<summary>
-		/// Image
+		/// Founder info
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoImage");
+		[ImplementPropertyType("founderInfo")]
+		public virtual string FounderInfo => this.Value<string>(_publishedValueFallback, "founderInfo");
 
 		///<summary>
-		/// Text
+		/// Founder quote
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoText")]
-		public virtual string InfoText => this.Value<string>(_publishedValueFallback, "infoText");
-
-		///<summary>
-		/// Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoTitle")]
-		public virtual string InfoTitle => this.Value<string>(_publishedValueFallback, "infoTitle");
+		[ImplementPropertyType("founderQuote")]
+		public virtual string FounderQuote => this.Value<string>(_publishedValueFallback, "founderQuote");
 	}
 }
