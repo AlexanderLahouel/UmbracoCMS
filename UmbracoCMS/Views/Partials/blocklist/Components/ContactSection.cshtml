@@ -1,0 +1,57 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ContactSettings;
+    var contactImage = content.ContactImage;
+    var sectionColor = settings?.ContactBackgroundColor?.Color ?? "#ffffff";
+}
+
+<section class="relative bg-[@sectionColor] overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-7 gap-8 items-end px-6 lg:px-12 h-full">
+
+        <div class="md:col-span-4 flex justify-center items-end">
+            @if (content.ContactImage != null)
+            {
+                <img src="@content.ContactImage.Url()"
+                     alt="@content.ContactImage.Name"
+                     class="w-full max-w-[520px] object-contain" />
+            }
+        </div>
+
+
+        <div class="md:col-span-3 space-y-10 text-gray-800 pb-8 md:pb-16">
+            <h2 class="text-[2.25rem] md:text-[2.75rem] font-bold leading-tight text-primary">
+                @content.ContactTitle
+            </h2>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <i class="fa-solid fa-location-dot text-secondary text-xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold">@content.ContactOfficeLabel</p>
+                        <p class="text-gray-600 text-sm">@content.ContactOfficeAddress</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <i class="fa-solid fa-phone text-secondary text-xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold">@content.ContactPhoneLabel</p>
+                        <p class="text-gray-600 text-sm">@content.ContactPhoneNumber</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                    <i class="fa-solid fa-envelope text-secondary text-xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold">@content.ContactEmailLabel</p>
+                        <p class="text-gray-600 text-sm">@content.ContactEmailAddress</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+

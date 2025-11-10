@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.ServiceDetailQuestion)Model.Content;
+    var sectionColor = content.QuestionBackgroundColor ?? "bg-neutral";
+}
+
+<section class="@sectionColor py-24">
+    <div class="max-w-6xl mx-auto px-8">
+        <h2 class="text-[1.75rem] font-semibold text-heading mb-6">@content.QuestionSectionTitle</h2>
+
+        @if (!string.IsNullOrEmpty(content.QuestionSectionDescription))
+        {
+            <p class="text-[1rem] text-gray-600 mb-10">@content.QuestionSectionDescription</p>
+        }
+
+        <form class="grid grid-cols-2 gap-8">
+            <input type="text" placeholder="Name"
+                   class="border border-gray-300 rounded-lg p-5 text-base placeholder:text-gray-400 focus:ring-2 focus:ring-primary focus:outline-none w-full" />
+
+            <input type="email" placeholder="Email"
+                   class="border border-gray-300 rounded-lg p-5 text-base placeholder:text-gray-400 focus:ring-2 focus:ring-primary focus:outline-none w-full" />
+
+            <textarea placeholder="Question" rows="5"
+                      class="border border-gray-300 rounded-lg p-5 text-base placeholder:text-gray-400 focus:ring-2 focus:ring-primary focus:outline-none col-span-2 resize-none w-full"></textarea>
+
+            <button type="submit"
+                    class="bg-primary text-white font-semibold py-4 px-10 rounded-md col-span-2 w-fit hover:bg-primary/90 transition-all">
+                Submit
+            </button>
+        </form>
+    </div>
+</section>
+
+

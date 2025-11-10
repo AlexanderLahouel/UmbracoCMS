@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Info Card</summary>
-	[PublishedModel("infoCard")]
-	public partial class InfoCard : PublishedElementModel
+	/// <summary>Contact Section</summary>
+	[PublishedModel("contactSection")]
+	public partial class ContactSection : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
-		public new const string ModelTypeAlias = "infoCard";
+		public new const string ModelTypeAlias = "contactSection";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<InfoCard, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<ContactSection, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public InfoCard(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public ContactSection(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,43 +50,67 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// info Background Color
+		/// ContactEmailAddress
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoBackgroundColor")]
-		public virtual string InfoBackgroundColor => this.Value<string>(_publishedValueFallback, "infoBackgroundColor");
+		[ImplementPropertyType("contactEmailAddress")]
+		public virtual string ContactEmailAddress => this.Value<string>(_publishedValueFallback, "contactEmailAddress");
 
 		///<summary>
-		/// info Email Label
+		/// ContactEmailLabel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoEmailLabel")]
-		public virtual string InfoEmailLabel => this.Value<string>(_publishedValueFallback, "infoEmailLabel");
+		[ImplementPropertyType("contactEmailLabel")]
+		public virtual string ContactEmailLabel => this.Value<string>(_publishedValueFallback, "contactEmailLabel");
 
 		///<summary>
-		/// Image
+		/// ContactImage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops InfoImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "infoImage");
+		[ImplementPropertyType("contactImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ContactImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "contactImage");
 
 		///<summary>
-		/// Text
+		/// ContactOfficeAddress
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoText")]
-		public virtual string InfoText => this.Value<string>(_publishedValueFallback, "infoText");
+		[ImplementPropertyType("contactOfficeAddress")]
+		public virtual string ContactOfficeAddress => this.Value<string>(_publishedValueFallback, "contactOfficeAddress");
 
 		///<summary>
-		/// Title
+		/// ContactOfficeLabel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("infoTitle")]
-		public virtual string InfoTitle => this.Value<string>(_publishedValueFallback, "infoTitle");
+		[ImplementPropertyType("contactOfficeLabel")]
+		public virtual string ContactOfficeLabel => this.Value<string>(_publishedValueFallback, "contactOfficeLabel");
+
+		///<summary>
+		/// ContactPhoneLabel
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactPhoneLabel")]
+		public virtual string ContactPhoneLabel => this.Value<string>(_publishedValueFallback, "contactPhoneLabel");
+
+		///<summary>
+		/// ContactPhoneNumber
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactPhoneNumber")]
+		public virtual string ContactPhoneNumber => this.Value<string>(_publishedValueFallback, "contactPhoneNumber");
+
+		///<summary>
+		/// ContactTitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.3.1+6458bb4")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactTitle")]
+		public virtual string ContactTitle => this.Value<string>(_publishedValueFallback, "contactTitle");
 	}
 }
