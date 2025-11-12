@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.AboutReviewSection)Model.Content;
+}
+<section class="relative bg-white-100 py-24 overflow-hidden 3xl:py-36">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center px-8 md:px-12 relative z-10">
+        <div class="md:pr-16">
+            <p class="uppercase text-sm font-bold text-secondary mb-2">@content.ReviewLabel</p>
+            <h2 class="text-[3rem] text-primary font-bold text-heading mb-4 leading-tight">@content.ReviewTitle</h2>
+
+            <div class="rte mb-6">
+                @Html.Raw(content.ReviewBody)
+            </div>
+
+            @if (content.ReviewRating != null)
+            {
+                <img src="@content.ReviewRating.Url()" alt="Star rating" class="mb-6 !w-[100px] h-auto object-contain" />
+            }
+
+            <p class="text-sm font-semibold text-review-text">@content.ReviewAuthor</p>
+            <p class="text-[1.5rem] text-review-text font-normal">@content.ReviewCompany</p>
+        </div>
+    </div>
+
+
+    <div class="absolute top-0 right-0 w-1/2 h-full hidden md:block">
+        <img src="@content.ReviewImage?.Url()"
+             alt="@content.ReviewAuthor"
+             class="w-full h-full object-cover object-center" />
+    </div>
+</section>
+
+
+

@@ -1,6 +1,10 @@
 ﻿.form-btn {
     @apply w-full bg-accent text-primary text-center font-bold rounded-md cursor-pointer select-none py-3 px-12 text-[1.125rem];
 }
+.map-form-btn {
+    @apply flex items-center justify-center w-[140px] bg-primary text-accent font-bold rounded-md cursor-pointer select-none py-3 px-6 text-[1.125rem] text-center;
+}
+
 
 .input-validation-error {
     @apply border-red-500 focus:ring-1 focus:ring-red-500;
